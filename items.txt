@@ -1,0 +1,91 @@
+Walmart: []
+Trader Joes:
+- lattes
+- dinners
+- pizza
+- cookies for ice cream
+- wine
+- breakfast burrito
+- licorice
+- sourdough bread
+- samosas
+- chicken soup dumplings
+- dark chocolate
+- spicy snacks and fruit snacks
+- pastries or other snack for with tea in morning
+- cottage cheese
+- fruit
+- sausage
+- balsamic vinegar
+Amazon:
+- mac keyboard/touchpad
+- return paint
+- brocolli
+Costco:
+- chicken breast
+- grape juice
+- eggs
+- frozen chicken and salmon
+- seltzer
+- tissues
+- toilet paper
+- return pouf?
+- return dinnerware?
+Target:
+- return target stuff
+- fragrance free hand soap
+- bras 44G
+- laungerie?
+Marketplace: []
+Savers: []
+ALDI:
+- fully cooked bacon
+- paper bowls
+- brocolli
+General:
+- adhsahdsjahd
+- small mirror
+- online
+- general
+- amazon
+- tjs
+fb: []
+Job Lot:
+- metal bowls
+- frogs
+ikea:
+- fake plant
+staples: []
+general:
+- glue
+- chili powder
+- glasses
+grocery:
+- razors
+- milk
+- chili powder
+- lettuce
+- cukes
+- feta
+- hand sanitizer
+- rubbing alcohol
+- baking soda
+- vinegar
+- red curry paste
+online:
+- mini moos
+- fly zapper
+- floor office mat
+- shelf stable milks
+- small mirror
+thrift:
+- mac keyboard and touchpad
+- mini fridge
+- phone stand charger
+- office chair
+- apple watch
+- SELL WILL's KEYBOARD
+- floor office mat
+- extension chord
+produce:
+- milk
