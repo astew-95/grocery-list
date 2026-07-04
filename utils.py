@@ -122,7 +122,7 @@ def expand_items(value: str) -> list[str]:
     ]
 
 
-def expand_tokens(tokens: list[str]) -> list[str]:
+def expand_comma_seperated_list(tokens: list[str]) -> list[str]:
     """
     Expand comma-separated arguments.
     """

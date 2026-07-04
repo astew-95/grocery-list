@@ -92,7 +92,6 @@ def handle_shop(store_arg):
     stores_to_print = [store, *INCLUDE_LISTS.get(store, [])]
     print_combined_shop_list(stores_to_print, items_data)
 
-
 def main():
     args = expand_comma_seperated_list(sys.argv[1:])
 

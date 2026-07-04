@@ -1,4 +1,5 @@
-Walmart: []
+Walmart:
+- oreo ice cream
 Trader Joes:
 - lattes
 - dinners
