@@ -1,15 +1,9 @@
 #!/usr/bin/env python3
 """
 Simple grocery list manager.
-
-Stores defaults in:
-    /Users/alexastewart/tools/groceries/defaults.yaml
-
-Stores active grocery lists in:
-    items.txt
-
-Stores activity log in:
-    grocery.log
+Stores defaults in: defaults.yaml
+Stores active grocery lists in: items.txt
+Stores activity log in: grocery.log
 """
 
 from __future__ import annotations
@@ -33,9 +27,9 @@ INCLUDE_LISTS = {
     "grocery": ["produce"],
 }
 
-DEFAULTS_FILE = Path("/Users/alexastewart/tools/groceries/defaults.yaml")
-ITEMS_FILE = Path("/Users/alexastewart/tools/groceries/items.txt")
-LOG_FILE = Path("/Users/alexastewart/tools/groceries/grocery.log")
+DEFAULTS_FILE = Path("defaults.yaml")
+ITEMS_FILE = Path("items.txt")
+LOG_FILE = Path("grocery.log")
 
 HELP_TEXT = """
 Usage:
