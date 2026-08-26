@@ -216,8 +216,8 @@ def get_shop_list(store: str, items_data: dict) -> set[str]:
 
 
 def get_expanded_shop_list(store: str, items_data: dict) -> set[str]:
-    items = set()
-    stores = [store, *include_lists[store]] if store in include_lists.keys() else [store]
+    items = get_shop_list(store, items_data)
+    stores = [*include_lists[store]] if store in include_lists.keys() else []
     for s in stores:
         items = items.union(get_shop_list(s, items_data))
     return items
