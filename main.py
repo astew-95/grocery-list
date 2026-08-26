@@ -30,7 +30,6 @@ INCLUDE_LISTS = {
     "Savers": ["thrift"],
     "fb": ["thrift"],
     "ikea": ["online"],
-    "ikea": ["online"],
     "grocery": ["produce"],
 }
 

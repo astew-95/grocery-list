@@ -1,0 +1,30 @@
+Amazon:
+- online
+- grocery
+costco:
+- produce
+- grocery
+Walmart:
+- grocery
+- online
+- produce
+Aldi:
+- grocery
+Target:
+- grocery
+- online
+- produce
+Trader Joes:
+- grocery
+- produce
+Job Lot:
+- grocery
+- thrift
+Savers:
+- thrift
+fb:
+- thrift
+ikea:
+- online
+grocery:
+- produce
