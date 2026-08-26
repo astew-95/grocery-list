@@ -218,7 +218,3 @@ def get_combined_shop_list(stores: list[str], items_data: dict) -> set[str]:
             items.add(item.lower())
 
     return items
-
-def print_combined_shop_list(stores: list[str], items_data: dict) -> None:
-    for item in get_combined_shop_list(stores, items_data):
-        print(f"- {item}")

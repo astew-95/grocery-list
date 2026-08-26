@@ -88,9 +88,9 @@ def handle_shop(store_arg):
         print(f"Unknown store: {store_arg}")
         return
 
-    # print_shop_list(store, items_data)
     stores_to_print = [store, *INCLUDE_LISTS.get(store, [])]
-    print_combined_shop_list(stores_to_print, items_data)
+    for item in get_combined_shop_list(stores_to_print, items_data):
+        print(f"- {item}")
 
 def main():
     args = expand_comma_seperated_list(sys.argv[1:])
