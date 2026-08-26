@@ -220,11 +220,3 @@ def get_expanded_shop_list(store: str, items_data: dict) -> set[str]:
     for s in include_lists.get(store, []):
         items = items.union(get_shop_list(s, items_data))
     return items
-
-
-def get_combined_shop_list(stores: list[str], items_data: dict) -> set[str]:
-    items = set()
-    for store in stores:
-        for item in items_data.get(store, []):
-            items.add(item.lower())
-    return items
