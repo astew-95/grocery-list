@@ -61,8 +61,7 @@ def handle_shop(store_arg):
         print(f"Unknown store: {store_arg}")
         return
 
-    stores_to_print = [store, *include_lists.get(store, [])]
-    for item in get_combined_shop_list(stores_to_print, items_data):
+    for item in get_expanded_shop_list(store, items_data):
         print(f"- {item}")
 
 def main():
