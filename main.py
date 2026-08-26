@@ -9,22 +9,7 @@ Stores activity log in: grocery.log
 from __future__ import annotations
 import sys
 from utils import *
-from config_files import *
-
-# include lists: online, grocery, produce, thrift
-INCLUDE_LISTS = {
-    "Amazon": [ "online","grocery"],
-    "costco": ["produce","grocery"],
-    "Walmart": ["grocery", "online", "produce"],
-    "Aldi": ["grocery"],
-    "Target": ["grocery", "online", "produce"],
-    "Trader Joes": ["grocery", "produce"],
-    "Job Lot": ["grocery", "thrift"],
-    "Savers": ["thrift"],
-    "fb": ["thrift"],
-    "ikea": ["online"],
-    "grocery": ["produce"],
-}
+from config_files import include_lists
 
 HELP_TEXT = """
 Usage:
@@ -50,7 +35,7 @@ def handle_shopped(store_arg, item_arg = None):
         print(f"Unknown store: {store_arg}")
         return
 
-    included = [] if store in SKIP_INCLUDE_ON_SHOPPED else INCLUDE_LISTS.get(store, [])
+    included = [] if store in SKIP_INCLUDE_ON_SHOPPED else include_lists.get(store, [])
     stores_to_clear = ["General", *included, store]
 
     if not item_arg:
@@ -76,7 +61,7 @@ def handle_shop(store_arg):
         print(f"Unknown store: {store_arg}")
         return
 
-    stores_to_print = [store, *INCLUDE_LISTS.get(store, [])]
+    stores_to_print = [store, *include_lists.get(store, [])]
     for item in get_combined_shop_list(stores_to_print, items_data):
         print(f"- {item}")
 
