@@ -1,11 +1,8 @@
 import datetime
 import yaml
 from datetime import datetime
-from pathlib import Path
 
-DEFAULTS_FILE = Path("defaults.yaml")
-ITEMS_FILE = Path("items.txt")
-LOG_FILE = Path("grocery.log")
+from config_files import *
 
 store_synonymns= {"trader joes": ["tj","tjs"],
                   "walmart": ["w+", "w", "walmart plus"],

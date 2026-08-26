@@ -8,9 +8,8 @@ Stores activity log in: grocery.log
 
 from __future__ import annotations
 import sys
-from pathlib import Path
 from utils import *
-
+from config_files import *
 
 # include lists: online, grocery, produce, thrift
 INCLUDE_LISTS = {
@@ -26,10 +25,6 @@ INCLUDE_LISTS = {
     "ikea": ["online"],
     "grocery": ["produce"],
 }
-
-DEFAULTS_FILE = Path("defaults.yaml")
-ITEMS_FILE = Path("items.txt")
-LOG_FILE = Path("grocery.log")
 
 HELP_TEXT = """
 Usage:
