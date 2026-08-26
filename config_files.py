@@ -7,6 +7,6 @@ LOG_FILE = Path("grocery.log")
 
 # include lists: online, grocery, produce, thrift
 INCLUDE_FILE = Path("include.yaml")
-include_lists: dict[str, str]
+include_lists: dict[str, list[str]]
 with INCLUDE_FILE.open("r", encoding="utf-8") as f:
     include_lists = yaml.safe_load(f)
