@@ -211,11 +211,14 @@ def print_shop_list(store: str, items_data: dict) -> None:
         print(f"- {item}")
 
 
-def print_combined_shop_list(stores: list[str], items_data: dict) -> None:
-    seen = set()
+def get_combined_shop_list(stores: list[str], items_data: dict) -> set[str]:
+    items = set()
     for store in stores:
         for item in items_data.get(store, []):
-            key = item.lower()
-            if key not in seen:
-                print(f"- {item}")
-                seen.add(key)
+            items.add(item.lower())
+
+    return items
+
+def print_combined_shop_list(stores: list[str], items_data: dict) -> None:
+    for item in get_combined_shop_list(stores, items_data):
+        print(f"- {item}")
