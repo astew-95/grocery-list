@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping List</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+        }
+
+        .version-selector {
+            margin-bottom: 1.5rem;
+        }
+
+        select {
+            font-size: 1rem;
+            padding: 0.4rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        .actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        a.button,
+        button {
+            padding: 0.4rem 0.8rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Shopping List</h1>
+
+<div class="store-selector">
+    <label for="store"><strong>Store:</strong></label>
+
+    <select
+        id="store"
+        onchange="window.location.href = '/' + encodeURIComponent(this.value)"
+    >   
+        {% if selected_store is none %}
+        <option value="" selected disabled hidden>Please choose a grocery list</option>
+        {% endif %}
+        {% for store in stores %}
+        <option
+            value="{{ store }}"
+            {% if store == selected_store %}selected{% endif %}
+        >
+            {{ store }}
+        </option>
+        {% endfor %}
+    </select>
+</div>
+
+{% if items %}
+
+<ul>
+    {% for item in items %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+
+{% elif selected_store is not none %}
+
+<p>No items to buy from: {{ selected_store }}.</p>
+
+{% endif %}
+
+</body>
+</html>
