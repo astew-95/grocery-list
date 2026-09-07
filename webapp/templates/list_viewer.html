@@ -101,46 +101,46 @@
 
 <body>
 
-<div class="grocery-list-heading">
-    <select
-        id="store"
-        onchange="window.location.href = '/' + encodeURIComponent(this.value)"
-    >   
-        {% if selected_store is none %}
-        <option value="" selected disabled hidden>Please choose a grocery list</option>
-        {% endif %}
-        {% for store in stores %}
-        <option
-            value="{{ store }}"
-            {% if store == selected_store %}selected{% endif %}
-        >
-            {{ store }}
-        </option>
-        {% endfor %}
-    </select>
-    
-    {% if selected_store is not none %}
-    <form action="/{{ selected_store }}/additem" method="post">
-        <input
-            id="item"
-            name="item"
-            type="text"
-            placeholder="New item"
-            required>
-        
-        <button class="add-btn" type="submit">
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <line x1="12" y1="0" x2="12" y2="24"/>
-                <line x1="0" y1="12" x2="24" y2="12"/>
-            </svg>
-        </button>
-    </form>
-    {% endif %}
-</div>
-
-{% if items %}
-
 <div class="table-container">
+    <div class="grocery-list-heading">
+        <select
+            id="store"
+            onchange="window.location.href = '/' + encodeURIComponent(this.value)"
+        >   
+            {% if selected_store is none %}
+            <option value="" selected disabled hidden>Please choose a grocery list</option>
+            {% endif %}
+            {% for store in stores %}
+            <option
+                value="{{ store }}"
+                {% if store == selected_store %}selected{% endif %}
+            >
+                {{ store }}
+            </option>
+            {% endfor %}
+        </select>
+        
+        {% if selected_store is not none %}
+        <form action="/{{ selected_store }}/additem" method="post">
+            <input
+                id="item"
+                name="item"
+                type="text"
+                placeholder="New item"
+                required>
+            
+            <button class="add-btn" type="submit">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <line x1="12" y1="0" x2="12" y2="24"/>
+                    <line x1="0" y1="12" x2="24" y2="12"/>
+                </svg>
+            </button>
+        </form>
+        {% endif %}
+    </div>
+
+    {% if items %}
+
     <table class="shopping-list-items">
         <tbody>
             {% for item in items %}
