@@ -50,41 +50,94 @@
             font-size: 0.9rem;
             cursor: pointer;
         }
+
+        .delete-btn {
+            background-color: #fff;
+            color: #dc3545;           /* Red text and icon color */
+            border: 1px solid #dc3545;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        /* Filled background on hover */
+        .delete-btn:hover {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
     </style>
 </head>
 
 <body>
 
-<h1>Shopping List</h1>
-
-<div class="store-selector">
-    <label for="store"><strong>Store:</strong></label>
-
-    <select
-        id="store"
-        onchange="window.location.href = '/' + encodeURIComponent(this.value)"
-    >   
-        {% if selected_store is none %}
-        <option value="" selected disabled hidden>Please choose a grocery list</option>
-        {% endif %}
-        {% for store in stores %}
-        <option
-            value="{{ store }}"
-            {% if store == selected_store %}selected{% endif %}
-        >
-            {{ store }}
-        </option>
-        {% endfor %}
-    </select>
+<div class="grocery-list-heading">
+    <div class="store-selector">
+        <select
+            id="store"
+            onchange="window.location.href = '/' + encodeURIComponent(this.value)"
+        >   
+            {% if selected_store is none %}
+            <option value="" selected disabled hidden>Please choose a grocery list</option>
+            {% endif %}
+            {% for store in stores %}
+            <option
+                value="{{ store }}"
+                {% if store == selected_store %}selected{% endif %}
+            >
+                {{ store }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    
+    {% if selected_store is not none %}
+    <form action="/{{ selected_store }}/additem" method="post">
+        <input
+            id="item"
+            name="item"
+            type="text"
+            placeholder="New item"
+            required>
+        
+        <button type="submit">+</button>
+    </form>
+    {% endif %}
 </div>
 
 {% if items %}
 
-<ul>
-    {% for item in items %}
-    <li>{{ item }}</li>
-    {% endfor %}
-</ul>
+<table class="shopping-list-items">
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item }}</td>
+            <td>
+                <form action="/{{ selected_store }}/delitem" method="post">
+                    <button class="delete-btn" type="submit">
+                        <input
+                            id="item"
+                            name="item"
+                            type="hidden"
+                            value="{{ item }}">
+                        <!-- Inline SVG Trashcan -->
+                        <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                            <path d="M3 6h18"/>
+                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+                            <line x1="10" y1="11" x2="10" y2="17"/>
+                            <line x1="14" y1="11" x2="14" y2="17"/>
+                        </svg>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% elif selected_store is not none %}
 
