@@ -6,6 +6,10 @@
     <title>Shopping List</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: sans-serif;
         }
@@ -33,7 +37,7 @@
             grid-template-columns: 1fr;
             width: fit-content;
             min-width: 50%;             /* resolves against .content-wrapper, which has a real width */
-            max-width: 50%;
+            /* max-width: 50%; */
             margin: auto;
         }
 
@@ -95,6 +99,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 1rem;
         }
 
     </style>
