@@ -39,7 +39,7 @@
             min-height: 100dvh;
             background-color: white;
             position: relative;
-            z-index: 0;
+            z-index: 1;
         }
 
         body::after {
@@ -52,7 +52,7 @@
             background-color: #333; /* Must MATCH your footer background color exactly */
             
             /* Pushes it below the main body content so your normal body color shows normally */
-            z-index: -1; 
+            z-index: 0; 
             pointer-events: none;
         }
 
