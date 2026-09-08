@@ -31,10 +31,10 @@
 
         .safari-bottom-shim {
             position: fixed;
-            bottom: 0;
+            bottom: -3;
             left: 0;
             width: 100%;
-            height: 4px; /* Just thick enough for Safari to read it */
+            min-height: 6px; /* Just thick enough for Safari to read it */
             z-index: -1; /* Hides it structurally behind the footer */
             background-color: #709070; /* Must EXACTLY match your footer background color */
             pointer-events: none;
