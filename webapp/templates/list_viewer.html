@@ -21,15 +21,23 @@
         }
 
         .site-footer {
-            position: relative;
-            overflow: visible;
-            background-color: #444;
+            background-color: #333;
             color: white;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 2;
+        }
+
+        .safari-bottom-shim {
+            position: sticky;
+            bottom: -1;
+            left: 0;
+            width: 100%;
+            min-height: 6px; /* Just thick enough for Safari to read it */
+            z-index: inherit; /* Hides it structurally behind the footer */
+            background-color: #333; /* Must EXACTLY match your footer background color */
+            pointer-events: none;
         }
 
         body {
