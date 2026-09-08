@@ -27,11 +27,6 @@
             padding: 0.4rem;
         }
 
-        input[type="text"] {
-            line-height: 2;
-            padding-left: 1rem;
-        }
-
         .table-container {
             display: grid;
             grid-template-columns: 1fr;
@@ -50,6 +45,10 @@
             padding: 0.75rem;
             /* border: 1px solid #888; */
             border-bottom: 1px solid #ddd;
+        }
+
+        td.shop-item {
+            font-size: 1.2rem;
         }
 
         td.store {
@@ -76,9 +75,23 @@
             transition: all 0.2s ease;
         }
 
+        form.additem {
+            display: flex;
+            align-items: stretch;
+        }
+
+        form.additem input[type="text"] {
+            padding-left: 1rem;
+            /* border-top-right-radius: 0;
+            border-bottom-right-radius: 0; */
+        }
+
         .add-btn {
             color: #90b090;
             border-color: #90b090;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            margin-left: -2px;
         }
 
         .add-btn:hover {
@@ -131,7 +144,7 @@
         </select>
         
         {% if selected_store is not none %}
-        <form action="/{{ selected_store }}/additem" method="post">
+        <form class=additem action="/{{ selected_store }}/additem" method="post">
             <input
                 id="item"
                 name="item"
@@ -155,7 +168,7 @@
         <tbody>
             {% for item, store in items %}
             <tr>
-                <td>{{ item }}</td>
+                <td class="shop-item">{{ item }}</td>
                 <td class="store"><p>({{ store }})</p></td>
                 <td class="actions">
                     <form action="/{{ store }}/delitem" method="post">
