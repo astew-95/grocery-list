@@ -46,17 +46,20 @@
             border-collapse: collapse;
         }
 
-        th, td {
+        td {
             padding: 0.75rem;
             /* border: 1px solid #888; */
             border-bottom: 1px solid #ddd;
         }
 
-        th {
-            text-align: left;
+        td.store {
+            width: 1%;
+            white-space: nowrap;
+            color: #ccc;
+            text-align: right;
         }
 
-        .actions {
+        td.actions {
             width: 1%;
             white-space: nowrap;
         }
@@ -150,9 +153,10 @@
 
     <table class="shopping-list-items">
         <tbody>
-            {% for item in items %}
+            {% for item, store in items %}
             <tr>
                 <td>{{ item }}</td>
+                <td class="store"><p>({{ store }})</p></td>
                 <td class="actions">
                     <form action="/{{ selected_store }}/delitem" method="post">
                         <button class="delete-btn" type="submit">

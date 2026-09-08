@@ -32,7 +32,7 @@ def store_list(
         {
             "stores": load_defaults().keys(),
             "selected_store": store,
-            "items": get_expanded_shop_list(store, load_items()),
+            "items": get_expanded_shop_list_by_store(store, load_items()),
         }
     )
 

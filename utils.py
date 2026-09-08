@@ -215,8 +215,12 @@ def get_shop_list(store: str, items_data: dict) -> set[str]:
     return items
 
 
-def get_expanded_shop_list(store: str, items_data: dict) -> set[str]:
-    items = get_shop_list(store, items_data)
+def get_expanded_shop_list_by_store(store: str, items_data: dict) -> list[tuple[str, str]]:
+    items = [(item, store) for item in get_shop_list(store, items_data)]
     for s in include_lists.get(store, []):
-        items = items.union(get_shop_list(s, items_data))
+        items += [(item, s) for item in get_shop_list(s, items_data)]
     return items
+
+
+def get_expanded_shop_list(store: str, items_data: dict) -> set[str]:
+    return set([item for item, _ in get_expanded_shop_list_by_store(store, items_data)])
