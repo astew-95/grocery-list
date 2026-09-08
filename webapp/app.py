@@ -53,11 +53,12 @@ def add_to_list(
 def del_from_list(
     store: str,
     item: str = Form(""),
+    current_store: str = Form(""),
 ):
     items = load_items()
     remove_items(store, [item], items)
     save_items(items)
     return RedirectResponse(
-        url=f"/{store}",
+        url=f"/{current_store}",
         status_code=303,
     )
