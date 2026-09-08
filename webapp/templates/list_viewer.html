@@ -22,27 +22,14 @@
 
         .site-footer {
             position: relative;
+            overflow: visible;
             background-color: #333;
-            width: 100%;
-        }
-
-        .footer-content {
             color: white;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .footer-cushion {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: #333;
-            overflow: hidden;
-            pointer-events: none;
+            z-index: 2;
         }
 
         body {
@@ -51,6 +38,22 @@
             flex-direction: column;
             min-height: 100dvh;
             background-color: white;
+            position: relative;
+            z-index: 0;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50vh; /* Fills the overscroll gap easily */
+            background-color: #333; /* Must MATCH your footer background color exactly */
+            
+            /* Pushes it below the main body content so your normal body color shows normally */
+            z-index: -1; 
+            pointer-events: none;
         }
 
         h1 {
@@ -256,10 +259,7 @@
     {% endif %}
 </main>
 
-<footer class="site-footer">
-    <div class="footer-content"></div>
-    <div class="footer-cushion"></div>
-</footer>
+<footer class="site-footer"></footer>
 
 </body>
 </html>
