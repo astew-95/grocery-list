@@ -22,8 +22,11 @@
 
         .site-footer {
             position: relative;
-            overflow: visible;
             background-color: #333;
+            width: 100%;
+        }
+
+        .footer-content {
             color: white;
             padding: 1rem 2rem;
             display: flex;
@@ -31,12 +34,15 @@
             align-items: center;
         }
 
-        .footer-bounce-cushion {
+        .footer-cushion {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
             height: 100vh;
-            position: relative;
-            margin-bottom: -100vh;
             background-color: #333;
-            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
         }
 
         body {
@@ -250,9 +256,10 @@
     {% endif %}
 </main>
 
-<footer class="site-footer"></footer>
-
-<div class="footer-bounce-cushion"></div>
+<footer class="site-footer">
+    <div class="footer-content"></div>
+    <div class="footer-cushion"></div>
+</footer>
 
 </body>
 </html>
