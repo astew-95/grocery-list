@@ -22,6 +22,7 @@
 
         .site-footer {
             position: relative;
+            overflow: visible;
             background-color: #333;
             color: white;
             padding: 1rem 2rem;
@@ -30,12 +31,7 @@
             align-items: center;
         }
 
-        .site-footer::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
+        .footer-bounce-cushion {
             height: 100vh;
             background-color: #333;
             margin-bottom: -100vh;
@@ -252,6 +248,8 @@
 </main>
 
 <footer class="site-footer"></footer>
+
+<div class="footer-bounce-cushion"></div>
 
 </body>
 </html>
