@@ -29,7 +29,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 200;
+            z-index: 2;
         }
 
         body {
@@ -39,7 +39,7 @@
             min-height: 100dvh;
             background-color: white;
             position: relative;
-            z-index: 100;
+            z-index: 0;
         }
 
         body::after {
@@ -52,7 +52,7 @@
             background-color: #333; /* Must MATCH your footer background color exactly */
             
             /* Pushes it below the main body content so your normal body color shows normally */
-            z-index: 0; 
+            z-index: -1; 
             pointer-events: none;
         }
 
