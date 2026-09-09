@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta charset="UTF-8">
     <title>Shopping List</title>
 
@@ -12,10 +12,17 @@
             box-sizing: border-box;
         }
 
+        html {
+            /* Fallback color Safari uses behind the glass toolbars
+               when it can't otherwise tell what's there */
+            background-color: #333;
+        }
+
         .site-header {
             background-color: #709070;
             color: white;
             padding: 1rem 2rem;
+            padding-top: calc(1rem + env(safe-area-inset-top));
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -25,6 +32,7 @@
             background-color: #333;
             color: white;
             padding: 1rem 2rem;
+            padding-bottom: calc(1rem + env(safe-area-inset-bottom));
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -34,7 +42,8 @@
             font-family: sans-serif;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            min-height: 100vh;       /* fallback for older browsers */
+            min-height: 100dvh;      /* tracks the real visible viewport in Safari 26 */
         }
 
         h1 {
