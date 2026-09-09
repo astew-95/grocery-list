@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <title>Shopping List</title>
 
     <style>
@@ -12,40 +13,28 @@
         }
 
         .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding-top: env(safe-area-inset-top);
             background-color: #709070;
             color: white;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .site-footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding-bottom: env(safe-area-inset-bottom);
             background-color: #333;
             color: white;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        html, body {
-            overscroll-behavior-y: none;
         }
 
         body {
             font-family: sans-serif;
             display: flex;
             flex-direction: column;
-            min-height: 100dvh;
+            min-height: 100vh;
         }
 
         h1 {
