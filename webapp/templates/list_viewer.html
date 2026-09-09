@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Shopping List</title>
 
@@ -12,49 +12,11 @@
             box-sizing: border-box;
         }
 
-        html, body {
-            height: 100%;
-            /* No elastic bounce, so no edge case where a fallback
-               color gets exposed at the top/bottom in the first place */
-            overflow: hidden;
-            background-color: #fff; /* now safe to be whatever you want */
-        }
-
-        body {
-            position: fixed;
-            inset: 0;
-        }
-
-        .app-scroll {
-            height: 100%;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .site-header {
-            background-color: #709070;
-            color: white;
-            padding: 1rem 2rem;
-            padding-top: calc(1rem + env(safe-area-inset-top));
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .site-footer {
-            background-color: #333;
-            color: white;
-            padding: 1rem 2rem;
-            padding-bottom: calc(1rem + env(safe-area-inset-bottom));
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         body {
             font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         h1 {
@@ -172,10 +134,6 @@
 
 <body>
 
-<div class="app-scroll">
-
-<header class="site-header"></header>
-
 <main class="content">
     <div class="table-container">
         <div class="grocery-list-heading">
@@ -261,10 +219,6 @@
 
     {% endif %}
 </main>
-
-<footer class="site-footer"></footer>
-
-</div>
 
 </body>
 </html>
