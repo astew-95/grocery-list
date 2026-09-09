@@ -12,32 +12,29 @@
         }
 
         .site-header {
-            background-color: #709070;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding-top: env(safe-area-inset-top);
+            background: #709070;
             color: white;
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .site-footer {
-            background-color: #333;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-bottom: env(safe-area-inset-bottom);
+            background: #333;
             color: white;
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .safari-bottom-shim {
-            position: sticky;
-            bottom: -1;
-            left: 0;
-            width: 100%;
-            min-height: 6px; /* Just thick enough for Safari to read it */
-            z-index: inherit; /* Hides it structurally behind the footer */
-            background-color: #333; /* Must EXACTLY match your footer background color */
-            pointer-events: none;
         }
 
         html, body {
@@ -255,8 +252,6 @@
 </main>
 
 <footer class="site-footer"></footer>
-
-<div class="safari-bottom-shim"></div>
 
 </body>
 </html>
