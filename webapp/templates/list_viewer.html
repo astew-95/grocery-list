@@ -12,10 +12,25 @@
             box-sizing: border-box;
         }
 
-        html {
-            /* Fallback color Safari uses behind the glass toolbars
-               when it can't otherwise tell what's there */
-            background-color: #333;
+        html, body {
+            height: 100%;
+            /* No elastic bounce, so no edge case where a fallback
+               color gets exposed at the top/bottom in the first place */
+            overflow: hidden;
+            background-color: #fff; /* now safe to be whatever you want */
+        }
+
+        body {
+            position: fixed;
+            inset: 0;
+        }
+
+        .app-scroll {
+            height: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+            flex-direction: column;
         }
 
         .site-header {
@@ -40,11 +55,6 @@
 
         body {
             font-family: sans-serif;
-            display: flex;
-            flex-direction: column;
-            background-color: #fff;
-            min-height: 100vh;       /* fallback for older browsers */
-            min-height: 100dvh;      /* tracks the real visible viewport in Safari 26 */
         }
 
         h1 {
@@ -162,6 +172,8 @@
 
 <body>
 
+<div class="app-scroll">
+
 <header class="site-header"></header>
 
 <main class="content">
@@ -251,6 +263,8 @@
 </main>
 
 <footer class="site-footer"></footer>
+
+</div>
 
 </body>
 </html>
